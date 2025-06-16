@@ -21,34 +21,39 @@ namespace WinFormsApp1
             try
             {
                 if (_databaseInitialized) return true;
-
                 bool newDatabase = !File.Exists(DatabasePath);
-
                 if (newDatabase)
                 {
                     SQLiteConnection.CreateFile(DatabasePath);
                 }
-               
-
                 using (var connection = new SQLiteConnection(ConnectionString))
                 {
                     connection.Open();
 
-                    // Create the users table if it doesn't exist
-                    string createTableQuery = @"
-                            CREATE TABLE IF NOT EXISTS Users (
-                                Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                Username TEXT UNIQUE NOT NULL,
-                                PasswordHash TEXT NOT NULL,
-                                CreatedAt TEXT NOT NULL
-                            )";
+                    // Create the Users table if it doesn't exist
+                    string createUsersQuery = @"
+                        CREATE TABLE IF NOT EXISTS Users (
+                            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                            Username TEXT UNIQUE NOT NULL,
+                            PasswordHash TEXT NOT NULL,
+                            CreatedAt TEXT NOT NULL
+                        )";
+                    using (var command = new SQLiteCommand(createUsersQuery, connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
 
-                    using (var command = new SQLiteCommand(createTableQuery, connection))
+                    // Create the Favourites table if it doesn't exist
+                    string createFavouritesQuery = @"
+                        CREATE TABLE IF NOT EXISTS Favourites (
+                            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                            FavouriteText TEXT NOT NULL
+                        )";
+                    using (var command = new SQLiteCommand(createFavouritesQuery, connection))
                     {
                         command.ExecuteNonQuery();
                     }
                 }
-
                 _databaseInitialized = true;
                 return true;
             }
@@ -59,7 +64,6 @@ namespace WinFormsApp1
                 return false;
             }
         }
-
         // Get a new connection to the database
         public static SQLiteConnection GetConnection()
         {

@@ -7,14 +7,14 @@ namespace WinFormsApp1
             InitializeComponent();
             
             // Add button for checking database status (for debugging)
-            Button btnCheckDb = new Button
-            {
-                Text = "Check Database",
-                Location = new Point(100, 150),
-                Size = new Size(120, 30)
-            };
-            btnCheckDb.Click += BtnCheckDb_Click;
-            this.Controls.Add(btnCheckDb);
+            //Button btnCheckDb = new Button
+            //{
+            //    Text = "Check Database",
+            //    Location = new Point(100, 150),
+            //    Size = new Size(120, 30)
+            //};
+            //btnCheckDb.Click += BtnCheckDb_Click;
+            //this.Controls.Add(btnCheckDb);
         }
 
         private void BtnCheckDb_Click(object sender, EventArgs e)

@@ -28,80 +28,111 @@ namespace WinFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblWelcome = new System.Windows.Forms.Label();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.txtQrInput = new System.Windows.Forms.TextBox();
-            this.btnGenerateQr = new System.Windows.Forms.Button();
-            this.pictureBoxQr = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxQr)).BeginInit();
-            this.SuspendLayout();
+            lblWelcome = new Label();
+            btnLogout = new Button();
+            txtQrInput = new TextBox();
+            btnGenerateQr = new Button();
+            pictureBoxQr = new PictureBox();
+            btnAddFavourite = new Button();
+            btnViewFavourites = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxQr).BeginInit();
+            SuspendLayout();
             // 
             // lblWelcome
             // 
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblWelcome.Location = new System.Drawing.Point(83, 68);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(296, 32);
-            this.lblWelcome.TabIndex = 0;
-            this.lblWelcome.Text = "Welcome to QR Generator!";
-            this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtQrInput
-            // 
-            this.txtQrInput.Location = new System.Drawing.Point(83, 120);
-            this.txtQrInput.Name = "txtQrInput";
-            this.txtQrInput.Size = new System.Drawing.Size(296, 27);
-            this.txtQrInput.TabIndex = 1;
-            // 
-            // btnGenerateQr
-            // 
-            this.btnGenerateQr.Location = new System.Drawing.Point(152, 160);
-            this.btnGenerateQr.Name = "btnGenerateQr";
-            this.btnGenerateQr.Size = new System.Drawing.Size(150, 40);
-            this.btnGenerateQr.TabIndex = 2;
-            this.btnGenerateQr.Text = "Generate QR Code";
-            this.btnGenerateQr.UseVisualStyleBackColor = true;
-            this.btnGenerateQr.Click += new System.EventHandler(this.btnGenerateQr_Click);
-            // 
-            // pictureBoxQr
-            // 
-            this.pictureBoxQr.Location = new System.Drawing.Point(152, 210);
-            this.pictureBoxQr.Name = "pictureBoxQr";
-            this.pictureBoxQr.Size = new System.Drawing.Size(150, 150);
-            this.pictureBoxQr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxQr.TabIndex = 3;
-            this.pictureBoxQr.TabStop = false;
+            lblWelcome.AutoSize = true;
+            lblWelcome.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblWelcome.Location = new Point(12, 9);
+            lblWelcome.Name = "lblWelcome";
+            lblWelcome.Size = new Size(250, 25);
+            lblWelcome.TabIndex = 0;
+            lblWelcome.Text = "Welcome to QR Generator!";
+            lblWelcome.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(152, 370);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(150, 40);
-            this.btnLogout.TabIndex = 4;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            btnLogout.Location = new Point(133, 278);
+            btnLogout.Margin = new Padding(3, 2, 3, 2);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(131, 30);
+            btnLogout.TabIndex = 4;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
+            // 
+            // txtQrInput
+            // 
+            txtQrInput.Location = new Point(12, 36);
+            txtQrInput.Margin = new Padding(3, 2, 3, 2);
+            txtQrInput.Name = "txtQrInput";
+            txtQrInput.Size = new Size(380, 23);
+            txtQrInput.TabIndex = 1;
+            // 
+            // btnGenerateQr
+            // 
+            btnGenerateQr.Location = new Point(133, 63);
+            btnGenerateQr.Margin = new Padding(3, 2, 3, 2);
+            btnGenerateQr.Name = "btnGenerateQr";
+            btnGenerateQr.Size = new Size(131, 30);
+            btnGenerateQr.TabIndex = 2;
+            btnGenerateQr.Text = "Generate QR Code";
+            btnGenerateQr.UseVisualStyleBackColor = true;
+            btnGenerateQr.Click += btnGenerateQr_Click;
+            // 
+            // pictureBoxQr
+            // 
+            pictureBoxQr.Location = new Point(133, 97);
+            pictureBoxQr.Margin = new Padding(3, 2, 3, 2);
+            pictureBoxQr.Name = "pictureBoxQr";
+            pictureBoxQr.Size = new Size(131, 112);
+            pictureBoxQr.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxQr.TabIndex = 3;
+            pictureBoxQr.TabStop = false;
+            // 
+            // btnAddFavourite
+            // 
+            btnAddFavourite.Location = new Point(41, 223);
+            btnAddFavourite.Margin = new Padding(3, 2, 3, 2);
+            btnAddFavourite.Name = "btnAddFavourite";
+            btnAddFavourite.Size = new Size(131, 30);
+            btnAddFavourite.TabIndex = 5;
+            btnAddFavourite.Text = "Add as Favourite";
+            btnAddFavourite.UseVisualStyleBackColor = true;
+            btnAddFavourite.Click += btnAddFavourite_Click;
+            // 
+            // btnViewFavourites
+            // 
+            btnViewFavourites.Location = new Point(220, 223);
+            btnViewFavourites.Margin = new Padding(3, 2, 3, 2);
+            btnViewFavourites.Name = "btnViewFavourites";
+            btnViewFavourites.Size = new Size(131, 30);
+            btnViewFavourites.TabIndex = 6;
+            btnViewFavourites.Text = "View Favourites";
+            btnViewFavourites.UseVisualStyleBackColor = true;
+            btnViewFavourites.Click += btnViewFavourites_Click;
             // 
             // WelcomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 430);
-            this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.pictureBoxQr);
-            this.Controls.Add(this.btnGenerateQr);
-            this.Controls.Add(this.txtQrInput);
-            this.Controls.Add(this.lblWelcome);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "WelcomeForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Welcome";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxQr)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(404, 322);
+            Controls.Add(btnViewFavourites);
+            Controls.Add(btnAddFavourite);
+            Controls.Add(btnLogout);
+            Controls.Add(pictureBoxQr);
+            Controls.Add(btnGenerateQr);
+            Controls.Add(txtQrInput);
+            Controls.Add(lblWelcome);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "WelcomeForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Welcome";
+            ((System.ComponentModel.ISupportInitialize)pictureBoxQr).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -111,5 +142,7 @@ namespace WinFormsApp1
         private Button btnGenerateQr;
         private PictureBox pictureBoxQr;
         private Button btnLogout;
+        private Button btnAddFavourite;
+        private Button btnViewFavourites;
     }
 }

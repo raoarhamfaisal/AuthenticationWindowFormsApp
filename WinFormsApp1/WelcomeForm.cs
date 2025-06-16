@@ -69,5 +69,32 @@ namespace WinFormsApp1
                 pictureBoxQr.Image = new Bitmap(bitmap);
             }
         }
+
+        private void btnAddFavourite_Click(object sender, EventArgs e)
+        {
+            string text = txtQrInput.Text.Trim();
+            if (string.IsNullOrEmpty(text))
+            {
+                MessageBox.Show("No text to add as favourite.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            string query = "INSERT INTO Favourites (FavouriteText) VALUES (@text)";
+            var parameters = new Dictionary<string, object> { { "text", text } };
+            if (DatabaseHelper.ExecuteNonQuery(query, parameters) > 0)
+            {
+                MessageBox.Show("Added as favourite!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Failed to add favourite.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnViewFavourites_Click(object sender, EventArgs e)
+        {
+            // Open FavouritesForm to view/edit/delete favourites
+            var favForm = new FavouritesForm();
+            favForm.ShowDialog();
+        }
     }
 }

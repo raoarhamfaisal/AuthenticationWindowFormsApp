@@ -22,7 +22,7 @@ namespace WinFormsApp1
 
             if (UserManager.ValidateUser(username, password))
             {
-                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Changed: Open the welcome form instead of just closing
                 this.Hide();
