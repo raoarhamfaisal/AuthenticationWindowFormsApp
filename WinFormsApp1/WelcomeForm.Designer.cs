@@ -29,8 +29,11 @@ namespace WinFormsApp1
         private void InitializeComponent()
         {
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.btnContinue = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.txtQrInput = new System.Windows.Forms.TextBox();
+            this.btnGenerateQr = new System.Windows.Forms.Button();
+            this.pictureBoxQr = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxQr)).BeginInit();
             this.SuspendLayout();
             // 
             // lblWelcome
@@ -44,22 +47,38 @@ namespace WinFormsApp1
             this.lblWelcome.Text = "Welcome to QR Generator!";
             this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnContinue
+            // txtQrInput
             // 
-            this.btnContinue.Location = new System.Drawing.Point(152, 150);
-            this.btnContinue.Name = "btnContinue";
-            this.btnContinue.Size = new System.Drawing.Size(150, 40);
-            this.btnContinue.TabIndex = 1;
-            this.btnContinue.Text = "Continue";
-            this.btnContinue.UseVisualStyleBackColor = true;
-            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
+            this.txtQrInput.Location = new System.Drawing.Point(83, 120);
+            this.txtQrInput.Name = "txtQrInput";
+            this.txtQrInput.Size = new System.Drawing.Size(296, 27);
+            this.txtQrInput.TabIndex = 1;
+            // 
+            // btnGenerateQr
+            // 
+            this.btnGenerateQr.Location = new System.Drawing.Point(152, 160);
+            this.btnGenerateQr.Name = "btnGenerateQr";
+            this.btnGenerateQr.Size = new System.Drawing.Size(150, 40);
+            this.btnGenerateQr.TabIndex = 2;
+            this.btnGenerateQr.Text = "Generate QR Code";
+            this.btnGenerateQr.UseVisualStyleBackColor = true;
+            this.btnGenerateQr.Click += new System.EventHandler(this.btnGenerateQr_Click);
+            // 
+            // pictureBoxQr
+            // 
+            this.pictureBoxQr.Location = new System.Drawing.Point(152, 210);
+            this.pictureBoxQr.Name = "pictureBoxQr";
+            this.pictureBoxQr.Size = new System.Drawing.Size(150, 150);
+            this.pictureBoxQr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxQr.TabIndex = 3;
+            this.pictureBoxQr.TabStop = false;
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(152, 210);
+            this.btnLogout.Location = new System.Drawing.Point(152, 370);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(150, 40);
-            this.btnLogout.TabIndex = 2;
+            this.btnLogout.TabIndex = 4;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -68,9 +87,11 @@ namespace WinFormsApp1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 293);
+            this.ClientSize = new System.Drawing.Size(462, 430);
             this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.btnContinue);
+            this.Controls.Add(this.pictureBoxQr);
+            this.Controls.Add(this.btnGenerateQr);
+            this.Controls.Add(this.txtQrInput);
             this.Controls.Add(this.lblWelcome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -78,6 +99,7 @@ namespace WinFormsApp1
             this.Name = "WelcomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxQr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
@@ -85,7 +107,9 @@ namespace WinFormsApp1
         #endregion
 
         private Label lblWelcome;
-        private Button btnContinue;
+        private TextBox txtQrInput;
+        private Button btnGenerateQr;
+        private PictureBox pictureBoxQr;
         private Button btnLogout;
     }
 }
