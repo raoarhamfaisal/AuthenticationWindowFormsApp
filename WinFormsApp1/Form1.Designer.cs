@@ -2,15 +2,9 @@
 {
     partial class Form1
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <inheritdoc/>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,59 +16,60 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            btnLogin = new Button();
-            btnSignup = new Button();
-            label1 = new Label();
-            
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnSignup = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(150, 100);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(200, 40);
-            btnLogin.Text = "Login";
-            btnLogin.Click += btnLogin_Click;
+            this.btnLogin.Location = new System.Drawing.Point(150, 100);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(200, 40);
+            this.btnLogin.TabIndex = 0;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnSignup
             // 
-            btnSignup.Location = new Point(150, 160);
-            btnSignup.Name = "btnSignup";
-            btnSignup.Size = new Size(200, 40);
-            btnSignup.Text = "Sign Up";
-            btnSignup.Click += btnSignup_Click;
+            this.btnSignup.Location = new System.Drawing.Point(150, 160);
+            this.btnSignup.Name = "btnSignup";
+            this.btnSignup.Size = new System.Drawing.Size(200, 40);
+            this.btnSignup.TabIndex = 1;
+            this.btnSignup.Text = "Sign Up";
+            this.btnSignup.UseVisualStyleBackColor = true;
+            this.btnSignup.Click += new System.EventHandler(this.btnSignup_Click);
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(150, 50);
-            label1.Name = "label1";
-            label1.Size = new Size(200, 25);
-            label1.Text = "Welcome to the System";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(150, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(200, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Welcome to the System";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(500, 300);
-            Controls.Add(label1);
-            Controls.Add(btnLogin);
-            Controls.Add(btnSignup);
-            Name = "Form1";
-            Text = "Main Menu";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(500, 300);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.btnSignup);
+            this.Name = "Form1";
+            this.Text = "Main Menu";
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
 
         #endregion
 
-        private Button btnLogin;
-        private Button btnSignup;
-        private Label label1;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnSignup;
+        private System.Windows.Forms.Label label1;
     }
 }

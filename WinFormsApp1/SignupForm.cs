@@ -5,6 +5,8 @@ namespace WinFormsApp1
         public SignupForm()
         {
             InitializeComponent();
+            // Ensure the database is initialized
+            DatabaseHelper.InitializeDatabase();
         }
 
         private void btnSignup_Click(object sender, EventArgs e)
@@ -28,16 +30,25 @@ namespace WinFormsApp1
             if (UserManager.RegisterUser(username, password))
             {
                 MessageBox.Show("Registration successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Changed: Open the login form directly instead of just closing
+                this.Hide();
+                var loginForm = new LoginForm();
+                loginForm.SetUsername(username); // Set the username in the login form if you add this method
+                loginForm.ShowDialog();
+
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Username already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Username already exists or registration failed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
     }

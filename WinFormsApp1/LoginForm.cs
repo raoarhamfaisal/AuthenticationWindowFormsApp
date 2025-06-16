@@ -5,6 +5,14 @@ namespace WinFormsApp1
         public LoginForm()
         {
             InitializeComponent();
+            // Ensure the database is initialized
+            DatabaseHelper.InitializeDatabase();
+        }
+
+        // Add this method to set the username from the signup form
+        public void SetUsername(string username)
+        {
+            txtUsername.Text = username;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -15,6 +23,13 @@ namespace WinFormsApp1
             if (UserManager.ValidateUser(username, password))
             {
                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Changed: Open the welcome form instead of just closing
+                this.Hide();
+                var welcomeForm = new WelcomeForm(username);
+                welcomeForm.ShowDialog();
+
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else
@@ -25,7 +40,8 @@ namespace WinFormsApp1
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
+         {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();}
     }
-}
+}}
